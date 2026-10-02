@@ -2,13 +2,13 @@ const TIERS = [
   { name: "夏洛蒂", short: "夏洛", src: "assets/charlotte.jpg", radius: 19, score: 2, color: "#f2b6c6" },
   { name: "夏沃蕾", short: "夏沃", src: "assets/chevreuse.jpg", radius: 22, score: 4, color: "#d45d5d" },
   { name: "艾梅莉埃", short: "艾梅", src: "assets/emilie.jpg", radius: 26, score: 8, color: "#8fbf86" },
-  { name: "希格雯", short: "希格", src: "assets/sigewinne.jpg", radius: 30, score: 16, color: "#7fd0e2" },
-  { name: "爱可菲", short: "爱可", src: "assets/escoffier.jpg", radius: 35, score: 24, color: "#d5e6f6" },
-  { name: "娜维娅", short: "娜维", src: "assets/navia.jpg", radius: 41, score: 36, color: "#e2b043" },
-  { name: "克洛琳德", short: "克洛", src: "assets/clorinde.jpg", radius: 48, score: 50, color: "#7a68d8" },
-  { name: "莱欧斯利", short: "莱欧", src: "assets/wriothesley.jpg", radius: 56, score: 68, color: "#5d7388" },
-  { name: "芙宁娜", short: "芙宁", src: "assets/furina.jpg", radius: 66, score: 90, color: "#4c95ff" },
-  { name: "那维莱特", short: "那维", src: "assets/neuvillette.jpg", radius: 77, score: 128, color: "#9fd0ff" },
+  { name: "希格雯", short: "希格", src: "assets/sigewinne.jpg", radius: 36, score: 16, color: "#7fd0e2" },
+  { name: "爱可菲", short: "爱可", src: "assets/escoffier.jpg", radius: 43, score: 24, color: "#d5e6f6" },
+  { name: "娜维娅", short: "娜维", src: "assets/navia.jpg", radius: 51, score: 36, color: "#e2b043" },
+  { name: "克洛琳德", short: "克洛", src: "assets/clorinde.jpg", radius: 60, score: 50, color: "#7a68d8" },
+  { name: "莱欧斯利", short: "莱欧", src: "assets/wriothesley.jpg", radius: 70, score: 68, color: "#5d7388" },
+  { name: "芙宁娜", short: "芙宁", src: "assets/furina.jpg", radius: 81, score: 90, color: "#4c95ff" },
+  { name: "那维莱特", short: "那维", src: "assets/neuvillette.jpg", radius: 92, score: 128, color: "#9fd0ff" },
 ];
 
 const W = 420;
@@ -16,8 +16,8 @@ const H = 700;
 const LEFT = 20;
 const RIGHT = 400;
 const BOTTOM = 676;
-const DEAD_Y = 168;
-const SPAWN_Y = 86;
+const DEAD_Y = 210;
+const SPAWN_Y = 104;
 const STEP = 1 / 120;
 const BEST_KEY = "merge-neuvillette-best";
 const SOUND_KEY = "merge-neuvillette-sound";
