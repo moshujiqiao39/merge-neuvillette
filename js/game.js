@@ -245,7 +245,7 @@ function physics(dt) {
   for (const fruit of fruits) {
     if (!fruit.alive) continue;
     fruit.vy += 2200 * dt;
-    fruit.vx *= Math.exp(-0.3 * dt);
+    fruit.vx *= Math.exp(-0.12 * dt);
     fruit.x += fruit.vx * dt;
     fruit.y += fruit.vy * dt;
     fruit.age += dt;
@@ -275,17 +275,17 @@ function physics(dt) {
 function resolveWalls(fruit) {
   if (fruit.x - fruit.r < LEFT) {
     fruit.x = LEFT + fruit.r;
-    if (fruit.vx < 0) fruit.vx *= -0.12;
-    fruit.vy *= 0.94;
+    if (fruit.vx < 0) fruit.vx *= -0.48;
+    fruit.vy *= 0.98;
   } else if (fruit.x + fruit.r > RIGHT) {
     fruit.x = RIGHT - fruit.r;
-    if (fruit.vx > 0) fruit.vx *= -0.12;
-    fruit.vy *= 0.94;
+    if (fruit.vx > 0) fruit.vx *= -0.48;
+    fruit.vy *= 0.98;
   }
   if (fruit.y + fruit.r > BOTTOM) {
     fruit.y = BOTTOM - fruit.r;
-    if (fruit.vy > 0) fruit.vy *= -0.08;
-    fruit.vx *= 0.84;
+    if (fruit.vy > 0) fruit.vy *= -0.42;
+    fruit.vx *= 0.94;
   }
   if (fruit.y - fruit.r < 4) {
     fruit.y = fruit.r + 4;
@@ -324,7 +324,7 @@ function resolvePair(a, b) {
   const rvy = b.vy - a.vy;
   const velN = rvx * nx + rvy * ny;
   if (velN >= 0) return;
-  const impulse = (-(1 + 0.06) * velN) / inv;
+  const impulse = (-(1 + 0.34) * velN) / inv;
   a.vx -= impulse * nx * inv1;
   a.vy -= impulse * ny * inv1;
   b.vx += impulse * nx * inv2;
@@ -333,7 +333,7 @@ function resolvePair(a, b) {
   const ty = nx;
   const velT = rvx * tx + rvy * ty;
   let friction = -velT / inv;
-  const maxFriction = 0.55 * impulse;
+  const maxFriction = 0.22 * impulse;
   friction = clamp(friction, -maxFriction, maxFriction);
   a.vx -= friction * tx * inv1;
   a.vy -= friction * ty * inv1;
@@ -371,8 +371,8 @@ function combine(a, b) {
   const child = makeFruit((a.x + b.x) / 2, (a.y + b.y) / 2, tier, false);
   child.x = clamp(child.x, LEFT + child.r, RIGHT - child.r);
   child.y = clamp(child.y, child.r + 4, BOTTOM - child.r);
-  child.vx = (a.vx + b.vx) * 0.25;
-  child.vy = Math.min(a.vy, b.vy, 0) * 0.2 - 70;
+  child.vx = (a.vx + b.vx) * 0.45;
+  child.vy = Math.min(a.vy, b.vy, 0) * 0.35 - 260;
   fruits.push(child);
   score += TIERS[tier].score;
   maxTier = Math.max(maxTier, tier);
